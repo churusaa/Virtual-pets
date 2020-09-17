@@ -58,7 +58,6 @@ public class VirtualPetTest {
         assertEquals(expected, 255);
     }
 
-    //TODO add Energy
     @Test
     public void shouldHaveDefaultEnergy() {
         VirtualPet underTest = new VirtualPet("Brenda", 10, 8, 64, 255, 128);
