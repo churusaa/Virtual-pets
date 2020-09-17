@@ -152,5 +152,22 @@ public class VirtualPetTest {
 
 
 
+    @Test
+    public void shouldHaveDefaultPlayfulness() {
+        VirtualPet underTest = new VirtualPet("Rock", 10, 8, 100, 255, 128);
+
+        int expected = underTest.getPlayfulness();
+
+        assertEquals(expected, 255);
+    }
+
+    @Test
+    public void shouldHaveDefaultEnergy() {
+        VirtualPet underTest = new VirtualPet("Brenda", 10, 8, 64, 255, 128);
+
+        int expected = underTest.getEnergy();
+
+        assertEquals(expected, 128);
+    }
 
 }
