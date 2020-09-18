@@ -69,105 +69,99 @@ public class VirtualPetTest {
 
     @Test
     public void shouldTick() {
-        VirtualPet pet = new VirtualPet( "Brenda", 10, 8, 64, 255, 128);
-        int thirst=pet.getThirst();
-        int boredom=pet.getBoredom();
-        int playfulness=pet.getPlayfulness();
-        int playEnergy=pet.getEnergy();
-
-
-
+        VirtualPet pet = new VirtualPet("Brenda", 10, 8, 64, 255, 9);
+        int thirst = pet.getThirst();
+        int boredom = pet.getBoredom();
+        int playfulness = pet.getPlayfulness();
+        int playEnergy = pet.getEnergy();
 
         int initialHunger = pet.getHunger();
         pet.tick();
 
         int hungerAfterTick = pet.getHunger();
-        int thirstAfterTick=pet.getThirst();
-        int boredomAfterTick=pet.getBoredom();
-        int playfulnessAfterTick=pet.getPlayfulness();
-        int playEnergyAfterTick=pet.getEnergy();
+        int thirstAfterTick = pet.getThirst();
+        int boredomAfterTick = pet.getBoredom();
+        int playfulnessAfterTick = pet.getPlayfulness();
+        int playEnergyAfterTick = pet.getEnergy();
 
         assertEquals(initialHunger + 10, hungerAfterTick);
-
         assertEquals(thirst + 10, thirstAfterTick);
         assertEquals(boredom + 10, boredomAfterTick);
-        assertEquals(playfulness+ 10, playfulnessAfterTick);
-        assertEquals(playEnergy-10, playEnergyAfterTick);
-
-    }
-  @Test
-  public void shouldFeedDecreaseHunger(){
-     VirtualPet pet=new VirtualPet("Brenda", 10, 8, 64, 255, 128);
-      int initialHunger = pet.getHunger();
-      pet.feed();
-
-      int hungerAfterFeed = pet.getHunger();
-      if (initialHunger<51){
-          assertEquals(0, hungerAfterFeed);
-      }
-      else {assertEquals(initialHunger -50, hungerAfterFeed);
-      }
-
-      }
-
-  @Test
-    public void shouldPlayUpdateAttitude(){
-      VirtualPet pet=new VirtualPet("Brenda", 10, 8, 64, 255, 128);
-      int thirst=pet.getThirst();
-      int boredom=pet.getBoredom();
-      int playfulness=pet.getPlayfulness();
-      int playEnergy=pet.getEnergy();
+        assertEquals(playfulness + 10, playfulnessAfterTick);
+        if (playEnergy < 11) {
+            assertEquals(0, playEnergyAfterTick);
+        } else {
+            assertEquals(playEnergy - 10, playEnergyAfterTick);
+        }
 
 
-
-
-      int initialHunger = pet.getHunger();
-      pet.play();
-
-      int hungerAfterPlay= pet.getHunger();
-      int thirstAfterPlay=pet.getThirst();
-      int boredomAfterPlay=pet.getBoredom();
-      int playfulnessAfterPlay=pet.getPlayfulness();
-      int playEnergyAfterPlay=pet.getEnergy();
-
-      assertEquals(initialHunger + 15, hungerAfterPlay);
-
-      assertEquals(thirst + 15, thirstAfterPlay);
-      assertEquals(boredom -10, boredomAfterPlay);
-      assertEquals(playfulness-40, playfulnessAfterPlay);
-      assertEquals(playEnergy-30, playEnergyAfterPlay);
-
-
-
-
-
-
-
-
-
-
-  }
-
-
-
-
-
-    @Test
-    public void shouldHaveDefaultPlayfulness() {
-        VirtualPet underTest = new VirtualPet("Rock", 10, 8, 100, 255, 128);
-
-        int expected = underTest.getPlayfulness();
-
-        assertEquals(expected, 255);
     }
 
     @Test
-    public void shouldHaveDefaultEnergy() {
-        VirtualPet underTest = new VirtualPet("Brenda", 10, 8, 64, 255, 128);
+    public void shouldFeedDecreaseHunger() {
+        VirtualPet pet = new VirtualPet("Brenda", 10, 8, 64, 255, 128);
+        int initialHunger = pet.getHunger();
+        pet.feed();
 
-        int expected = underTest.getEnergy();
+        int hungerAfterFeed = pet.getHunger();
+        if (initialHunger < 51) {
+            assertEquals(0, hungerAfterFeed);
+        } else {
+            assertEquals(initialHunger - 50, hungerAfterFeed);
+        }
 
-        assertEquals(expected, 128);
     }
+
+    @Test
+    public void shouldHydrateDecreaseThirst(){
+        VirtualPet pet = new VirtualPet("Brenda", 10, 8, 64, 255, 128);
+        int intialThirst = pet.getThirst();
+        pet.hydrate();
+        int thirstAfterHydrate = pet.getThirst();
+
+        assertEquals(intialThirst-50, thirstAfterHydrate);
+    }
+
+    @Test
+    public void shouldPlayUpdateAttitude() {
+        VirtualPet pet = new VirtualPet("Brenda", 10, 8, 9, 39, 29);
+        int thirst = pet.getThirst();
+        int boredom = pet.getBoredom();
+        int playfulness = pet.getPlayfulness();
+        int playEnergy = pet.getEnergy();
+
+        int initialHunger = pet.getHunger();
+        pet.play();
+
+        int hungerAfterPlay = pet.getHunger();
+        int thirstAfterPlay = pet.getThirst();
+        int boredomAfterPlay = pet.getBoredom();
+        int playfulnessAfterPlay = pet.getPlayfulness();
+        int playEnergyAfterPlay = pet.getEnergy();
+
+        assertEquals(initialHunger + 15, hungerAfterPlay);
+
+        assertEquals(thirst + 15, thirstAfterPlay);
+
+        if (playEnergy < 31) {
+            assertEquals(0, playEnergyAfterPlay);
+        } else {
+            assertEquals(playEnergy - 30, playEnergyAfterPlay);
+        }
+        if (boredom < 11) {
+            assertEquals(0, boredomAfterPlay);
+        } else {
+            assertEquals(boredom - 10, boredomAfterPlay);
+        }
+        if (playfulness < 41) {
+            assertEquals(0, playfulnessAfterPlay);
+        } else {
+            assertEquals(playfulnessAfterPlay - 40, playfulnessAfterPlay);
+        }
+
+    }
+
+    //TODO Test for negative values
+
 
 }

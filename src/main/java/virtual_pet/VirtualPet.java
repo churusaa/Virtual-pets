@@ -43,30 +43,42 @@ public class VirtualPet {
     }
 
     public void tick() {
-      hunger+=10;
-      thirst+=10;
-      boredom+=10;
-      playfulness+=10;
-      energy-=10;
+        hunger += 10;
+        thirst += 10;
+        boredom += 10;
+        playfulness += 10;
+        energy -= 10;
 
-
-
+        if (energy < 0) {
+            energy = 0;
+        }
     }
 
     public void feed() {
-        hunger-=50;
-        if (hunger<0){
-            hunger=0;
-
+        hunger -= 50;
+        if (hunger < 0) {
+            hunger = 0;
         }
 
     }
 
     public void play() {
-     hunger+=15;
-     thirst+=15;
-     boredom-=10;
-     playfulness-=40;
-     energy-=30;
+        hunger += 15;
+        thirst += 15;
+        boredom -= 10;
+        playfulness -= 40;
+        energy -= 30;
+        if (energy < 0) {
+            energy = 0;
+        }
+        if (boredom < 0) {
+            boredom = 0;
+        }
+        if (playfulness < 0) {
+            playfulness = 0;
+        }
+    }
+
+    public void hydrate() {
     }
 }
