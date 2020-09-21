@@ -4,9 +4,9 @@
 
 Do you remember Cyberpet? Tamagotchi? Digimon? Petz? Virtual pets like these were born in 1996. With your help, they will be reborn.
 
-Our pets are organic or robotic! They are housed in a shelter and cared for by you. They have unique personalities. They can be adopted.
+Our shelter houses organic and robotic pets! They are housed in a shelter and cared for by you. They have unique personalities. They can be adopted.
 
-Too adopt a pet, you must visit the shelter, choose your favorite of the bunch, give them a personal name, and take them home!
+To adopt a pet, you must visit the shelter, choose your favorite of the bunch, give them a personal name, and take them home!
 
 Now comes the fun part!
 
