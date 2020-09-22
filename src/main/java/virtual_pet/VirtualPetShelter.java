@@ -6,9 +6,26 @@ import java.util.Map;
 
 public class VirtualPetShelter {
 
+    Map<String, VirtualPet> pets;
+
 //    Collection<VirtualPet> virtualPetShelter = new Collection<VirtualPet>();
 
 //    virtualPetShelter.put();
-    Map<String, VirtualPet> virtualPetShelter = new HashMap<String, VirtualPet>();
 
+    public VirtualPetShelter() {
+        pets = new HashMap<String, VirtualPet>();
+    }
+
+
+    public void addToShelter(VirtualPet pet) {
+        pets.put(pet.getName(), pet);
+    }
+
+    public Collection<VirtualPet> retrievePets() {
+        return pets.values();
+    }
+
+
+    public void feedAll() {
+    }
 }
