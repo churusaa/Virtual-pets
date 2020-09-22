@@ -11,13 +11,7 @@ public class Application {
         //TODO take user input
         System.out.print("Please enter a name for your new pet: ");
         String name = input.nextLine();
-        VirtualPet myVirtualPet = new VirtualPet(
-                name); //name
-//                (int)(Math.random()*100), //hunger
-//                (int)(Math.random()*100), //thirst
-//                (int)(Math.random()*100), //boredom
-//                (int)(Math.random()*100), //playfulness
-//                (int)(Math.random()*100)); //energy
+        VirtualPet myVirtualPet = new VirtualPet(name);
         VirtualPetShelter shelter = new VirtualPetShelter();
         VirtualPet bobbo = new VirtualPet("Bobbo");
         VirtualPet mambo = new VirtualPet("Mambo");
