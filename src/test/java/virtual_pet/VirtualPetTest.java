@@ -7,13 +7,13 @@ import static org.junit.jupiter.api.Assertions.*;
 public class VirtualPetTest {
     @Test
     public void shouldBeAbleToCreatePet() {
-        VirtualPet pet = new VirtualPet("Test Name", 12, 10, 35, 255, 128);
+        VirtualPet pet = new VirtualPet("Test Name");
     }
 
     @Test
     public void petShouldHaveName() {
         //arrangement
-        VirtualPet underTest = new VirtualPet("Jeff", 15, 14, 50, 255, 128);
+        VirtualPet underTest = new VirtualPet("Jeff");
 
         //action
         String result = underTest.getName();
@@ -24,7 +24,7 @@ public class VirtualPetTest {
 
     @Test
     public void shouldHaveDefaultHunger() {
-        VirtualPet underTest = new VirtualPet("Steve", 10, 1, 11, 255, 128);
+        VirtualPet underTest = new VirtualPet("Steve");
 
         int expected = underTest.getHunger();
 
@@ -33,7 +33,7 @@ public class VirtualPetTest {
 
     @Test
     public void shouldHaveDefaultThirst() {
-        VirtualPet underTest = new VirtualPet("Brenda", 10, 8, 15, 255, 128);
+        VirtualPet underTest = new VirtualPet("Brenda");
 
         int expected = underTest.getThirst();
 
@@ -42,7 +42,7 @@ public class VirtualPetTest {
 
     @Test
     public void shouldHaveDefaultBoredom() {
-        VirtualPet underTest = new VirtualPet("Gerdie", 10, 8, 20, 255, 128);
+        VirtualPet underTest = new VirtualPet("Gerdie");
 
         int expected = underTest.getBoredom();
 
@@ -51,7 +51,7 @@ public class VirtualPetTest {
 
     @Test
     public void shouldHaveDefaultPlayfulness() {
-        VirtualPet underTest = new VirtualPet("Rock", 10, 8, 100, 255, 128);
+        VirtualPet underTest = new VirtualPet("Rock");
 
         int expected = underTest.getPlayfulness();
 
@@ -60,7 +60,7 @@ public class VirtualPetTest {
 
     @Test
     public void shouldHaveDefaultEnergy() {
-        VirtualPet underTest = new VirtualPet("Brenda", 10, 8, 64, 255, 128);
+        VirtualPet underTest = new VirtualPet("Brenda");
 
         int expected = underTest.getEnergy();
 
@@ -69,7 +69,7 @@ public class VirtualPetTest {
 
     @Test
     public void shouldTick() {
-        VirtualPet pet = new VirtualPet("Brenda", 10, 8, 64, 255, 9);
+        VirtualPet pet = new VirtualPet("Brenda");
         int thirst = pet.getThirst();
         int boredom = pet.getBoredom();
         int playfulness = pet.getPlayfulness();
@@ -95,7 +95,7 @@ public class VirtualPetTest {
 
     @Test
     public void shouldFeedDecreaseHunger() {
-        VirtualPet pet = new VirtualPet("Brenda", 10, 8, 64, 255, 128);
+        VirtualPet pet = new VirtualPet("Brenda");
         int initialHunger = pet.getHunger();
         pet.feed();
 
@@ -106,7 +106,7 @@ public class VirtualPetTest {
 
     @Test
     public void shouldHydrateDecreaseThirst(){
-        VirtualPet pet = new VirtualPet("Brenda", 10, 8, 64, 255, 128);
+        VirtualPet pet = new VirtualPet("Brenda");
         int initialThirst = pet.getThirst();
         pet.hydrate();
         int thirstAfterHydrate = pet.getThirst();
@@ -116,7 +116,7 @@ public class VirtualPetTest {
 
     @Test
     public void shouldPlayUpdateAttitude() {
-        VirtualPet pet = new VirtualPet("Brenda", 10, 8, 9, 39, 29);
+        VirtualPet pet = new VirtualPet("Brenda");
         int thirst = pet.getThirst();
         int boredom = pet.getBoredom();
         int playfulness = pet.getPlayfulness();
@@ -141,7 +141,8 @@ public class VirtualPetTest {
 
     @Test
     public void shouldAttributesNotBeNegative(){
-        VirtualPet pet = new VirtualPet("Gertude" , 0 , 0 , 0 , 0 , 0);
+        VirtualPet pet = new VirtualPet("Gertude");
+        //TODO make this method use setters
         pet.play();
         pet.feed();
         pet.hydrate();

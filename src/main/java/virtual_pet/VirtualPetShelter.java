@@ -6,10 +6,9 @@ import java.util.Map;
 
 public class VirtualPetShelter {
 
-    Map<String, VirtualPet> pets;
+    private Map<String, VirtualPet> pets;
 
 //    Collection<VirtualPet> virtualPetShelter = new Collection<VirtualPet>();
-
 //    virtualPetShelter.put();
 
     public VirtualPetShelter() {
@@ -20,16 +19,37 @@ public class VirtualPetShelter {
         return pets;
     }
 
+    public void addToShelter(VirtualPet petToAdd) {
+        pets.put(petToAdd.getName(), petToAdd);
+    }
 
-    public void addToShelter(VirtualPet pet) {
-        pets.put(pet.getName(), pet);
+    public void removePet(String petName){
+        pets.remove(petName);
     }
 
     public Collection<VirtualPet> retrievePets() {
         return pets.values();
     }
 
+    public VirtualPet retrievePet(String name){
+        return pets.get(name);
+    }
 
-    public void feedAll() {
+    public void feedAllPets() {
+        for (VirtualPet petToFeed : pets.values()){
+          petToFeed.feed();
+        }
+    }
+
+    public void tickAllPets(){
+        for (VirtualPet petToTick : pets.values()){
+            petToTick.tick();
+        }
+    }
+
+    public void hydrateAllPets() {
+        for (VirtualPet petToHydrate : pets.values()){
+            petToHydrate.hydrate();
+        }
     }
 }

@@ -9,13 +9,13 @@ public class VirtualPet {
     private int playfulness;
     private int energy;
 
-    public VirtualPet(String name, int hunger, int thirst, int boredom, int playfulness, int energy) {
+    public VirtualPet(String name) {
         this.name = name;
-        this.hunger = hunger;
-        this.thirst = thirst;
-        this.boredom = boredom;
-        this.playfulness = playfulness;
-        this.energy = energy;
+        this.hunger = (int)(Math.random()*100);
+        this.thirst = (int)(Math.random()*100);
+        this.boredom = (int)(Math.random()*100);
+        this.playfulness = (int)(Math.random()*100);
+        this.energy = (int)(Math.random()*100);
     }
 
     public String getName() {
@@ -85,5 +85,9 @@ public class VirtualPet {
             thirst = 0;
         }
 
+    }
+    @Override
+    public String toString(){
+        return name + " | Hunger: " + hunger ; //nice up the output by calling our homebrew class .toString()
     }
 }
