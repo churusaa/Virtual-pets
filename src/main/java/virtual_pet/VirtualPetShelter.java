@@ -52,4 +52,10 @@ public class VirtualPetShelter {
             petToHydrate.hydrate();
         }
     }
+
+    public void playWithAllPets() {
+        for (VirtualPet petToPlayWith : pets.values()){
+            petToPlayWith.play();
+        }
+    }
 }

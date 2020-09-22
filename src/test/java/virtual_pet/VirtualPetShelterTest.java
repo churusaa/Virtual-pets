@@ -96,4 +96,26 @@ public class VirtualPetShelterTest {
         assertThat(petA.getHunger()).isGreaterThan(hungerBeforeTickA);
         assertThat(petB.getHunger()).isGreaterThan(hungerBeforeTickB);
     }
+
+    @Test
+    public void shouldBeAbleToPlayWithAllPets(){
+        //Create Shelter
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        //Create Pets
+        VirtualPet petA = new VirtualPet("A");
+        VirtualPet petB = new VirtualPet("B");
+        //Add pets to shelter
+        underTest.addToShelter(petA);
+        underTest.addToShelter(petB);
+        //Check energy before play
+        underTest.tickAllPets();
+        int boredomBeforePlayA = petA.getBoredom();
+        int boredomBeforePlayB = petB.getBoredom();
+        //Play with all pets
+        underTest.playWithAllPets();
+        assertThat(petA.getBoredom()).isLessThan(boredomBeforePlayA);
+        assertThat(petB.getBoredom()).isLessThan(boredomBeforePlayB);
+    }
+
+    //TODO Test to get status of all pets
 }

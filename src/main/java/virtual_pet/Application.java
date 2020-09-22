@@ -31,16 +31,6 @@ public class Application {
             System.out.println(petToDisplay.toString());
         }
 
-//        VirtualPetShelter franklinCounty = new VirtualPetShelter();
-//        VirtualPet petA = new VirtualPet("A", 12, 10, 35, 255, 128);
-//        VirtualPet petB = new VirtualPet("B", 12, 10, 35, 255, 128);
-//
-//        franklinCounty.addToShelter(petA);
-//        franklinCounty.addToShelter(petB);
-//
-//        System.out.println(franklinCounty.getShelter().entrySet());
-//        System.out.println(franklinCounty.getShelter());
-
 
     }
 
