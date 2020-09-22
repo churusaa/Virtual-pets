@@ -16,6 +16,10 @@ public class VirtualPetShelter {
         pets = new HashMap<String, VirtualPet>();
     }
 
+    public Map getShelter(){
+        return pets;
+    }
+
 
     public void addToShelter(VirtualPet pet) {
         pets.put(pet.getName(), pet);

@@ -4,11 +4,9 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Map;
-import java.util.HashMap;
-
+import java.util.Map.Entry;
 
 import static org.assertj.core.api.AssertionsForInterfaceTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 public class VirtualPetShelterTest {
 
@@ -35,19 +33,19 @@ public class VirtualPetShelterTest {
 
     }
 
-//    @Test
-//    public void shouldBeAbleToFeedAllPets(){
-//        VirtualPetShelter franklinCounty = new VirtualPetShelter();
-//        VirtualPet petA = new VirtualPet("A", 12, 10, 35, 255, 128);
-//        VirtualPet petB = new VirtualPet("B", 12, 10, 35, 255, 128);
-//
-//
-//        franklinCounty.feedAll();
-//
-//        for(Map.Entry<String, String> entry: franklinCounty.retrievePets().entrySet()) {
-//            System.out.println("The student's id is " + entry.getKey());
-//            System.out.println("The student's name is " + entry.getValue());
-//        }
-//    }
+    @Test
+    public void shouldBeAbleToFeedAllPets(){
+        VirtualPetShelter franklinCounty = new VirtualPetShelter();
+        VirtualPet petA = new VirtualPet("A", 12, 10, 35, 255, 128);
+        VirtualPet petB = new VirtualPet("B", 12, 10, 35, 255, 128);
+
+
+        franklinCounty.feedAll();
+
+        for(Entry<String, String> entry: franklinCounty.getShelter().entrySet()) {
+            System.out.println("The student's id is " + entry.getKey());
+            System.out.println("The student's name is " + entry.getValue());
+        }
+    }
 
 }
