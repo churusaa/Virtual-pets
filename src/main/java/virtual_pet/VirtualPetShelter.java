@@ -20,7 +20,7 @@ public class VirtualPetShelter {
     }
 
     public void addToShelter(VirtualPet petToAdd) {
-        pets.put(petToAdd.getName(), petToAdd);
+        pets.put(petToAdd.getName().toLowerCase(), petToAdd);
     }
 
     public void removePet(String petName){

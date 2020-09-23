@@ -29,17 +29,18 @@ public class Application {
         String petToPlayWith = "";
         while (!(petToPlayWith.equalsIgnoreCase("quit"))) {
             System.out.println("Which pet would you like to play with?" +
-                    "Type \"quit\" to exit");
-            petToPlayWith = input.nextLine();
+                    "\nType \"quit\" to exit");
+            petToPlayWith = input.nextLine().toLowerCase();
             System.out.println();
-            //TODO fix case sensitivity
+
             if (shelter.getShelter().containsKey(petToPlayWith)) {
                 int decisionInputOption = 0;
                 while (decisionInputOption != 4) {
-                    //TODO fix formatting
                     System.out.println("What would you like to do with " + petToPlayWith + "?" +
-                            "Type 1 to play, 2 to feed, 3 to water, 4 to return to the main menu.");
+                            "\nType 1 to play, 2 to feed, 3 to water, 4 to return to the main menu.");
                     decisionInputOption = input.nextInt();
+                    input.nextLine();
+
                     switch (decisionInputOption) {
                         case 1:
                             shelter.retrievePet(petToPlayWith).play();
@@ -51,13 +52,17 @@ public class Application {
                             shelter.retrievePet(petToPlayWith).hydrate();
                             break;
                         case 4:
-                            //TODO make sure break/exit returns desired output instead of a bad pet name
+                            System.out.println(petToPlayWith + " waves goodbye. Goodbye sweet little " + petToPlayWith + "!");
                             break;
                         default:
                             System.out.println("Please choose 1, 2, 3, or 4");
                     }
                 }
-            } else {
+            } else if (petToPlayWith.equalsIgnoreCase("quit")){
+                System.out.println("The shelter is closed for the day. We say goodbye to all our little friends." +
+                        "\n We hope to see you again.");
+            }
+            else {
                 System.out.println(petToPlayWith + " isn't here right now!");
             }
             System.out.println("");
