@@ -58,4 +58,11 @@ public class VirtualPetShelter {
             petToPlayWith.play();
         }
     }
+
+    public void getStatusOfAllPets() {
+        System.out.println();
+        for (VirtualPet petToDisplay : this.retrievePets()){
+            System.out.println(petToDisplay.toString());
+        }
+    }
 }

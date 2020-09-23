@@ -118,4 +118,18 @@ public class VirtualPetShelterTest {
     }
 
     //TODO Test to get status of all pets
+    @Test
+    public void shouldBeAbleToShowAllPetsStatus(){
+        //Create Shelter
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        //Create Pets
+        VirtualPet petA = new VirtualPet("A");
+        VirtualPet petB = new VirtualPet("B");
+        //Add pets to shelter
+        underTest.addToShelter(petA);
+        underTest.addToShelter(petB);
+        //Display status of all pets in shelter
+//        underTest.getStatusOfAllPets();
+//        assertThat(underTest.getStatusOfAllPets()).isNotNull();
+    }
 }

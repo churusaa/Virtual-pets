@@ -87,8 +87,8 @@ public class VirtualPet {
 
     }
     @Override
-    //TODO Make this display pet status in a way that's relevant to us
+    //nice up the output by calling our homebrew class .toString()
     public String toString(){
-        return name + " | Hunger: " + hunger ; //nice up the output by calling our homebrew class .toString()
+        return name + ":\nHunger: " + hunger + " | Thirst: " + thirst + " | Energy: " + energy + " | Playfulness: " + playfulness + " | Boredom: " + boredom;
     }
 }
