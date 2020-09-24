@@ -1,11 +1,32 @@
 package virtual_pet;
 
 public class RoboticPet extends VirtualPet {
-    private int oilLevel = 100;
-    private int maintenanceLevel = 0;
+    private int oilLevel;
+    private int maintenanceLevel;
 
     public RoboticPet(String name) {
         super(name);
+        this.oilLevel = 100;
+        this.maintenanceLevel = 0;
+    }
+
+    public int getOilLevel() {
+        return oilLevel;
+    }
+
+    public int getMaintenanceLevel() {
+        return maintenanceLevel;
+    }
+
+    public void oilRobot() {
+        oilLevel = 100;
+    }
+
+    public void maintainRobot() {
+        maintenanceLevel -= 20;
+        if (maintenanceLevel < 0) {
+            maintenanceLevel = 0;
+        }
     }
 
     @Override
@@ -25,6 +46,8 @@ public class RoboticPet extends VirtualPet {
         if (maintenanceLevel > 100) {
             maintenanceLevel = 100;
         }
+        //TODO implement increase need for oil and maintenance after walk
+
     }
 
     @Override
