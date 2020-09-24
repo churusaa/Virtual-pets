@@ -2,7 +2,7 @@ package virtual_pet;
 
 public abstract class VirtualPet {
 
-    private String name;
+    protected String name;
 //    private int hunger;
 //    private int thirst;
     protected int boredom;
@@ -78,14 +78,8 @@ public abstract class VirtualPet {
             playfulness = 0;
         }
     }
-//
-//    public void hydrate() {
-//        thirst -= 50;
-//        if (thirst < 0){
-//            thirst = 0;
-//        }
-//
-//    }
+
+
 //    @Override
     //nice up the output by calling our homebrew class .toString()
 //    public String toString(){
