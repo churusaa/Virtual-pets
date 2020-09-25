@@ -15,7 +15,7 @@ public class VirtualPetShelter {
         pets = new HashMap<String, VirtualPet>();
     }
 
-    public Map getShelter(){
+    public Map getShelter() {
         return pets;
     }
 
@@ -23,7 +23,7 @@ public class VirtualPetShelter {
         pets.put(petToAdd.getName().toLowerCase(), petToAdd);
     }
 
-    public void removePet(String petName){
+    public void removePet(String petName) {
         pets.remove(petName);
     }
 
@@ -31,37 +31,41 @@ public class VirtualPetShelter {
         return pets.values();
     }
 
-    public VirtualPet retrievePet(String name){
+    public VirtualPet retrievePet(String name) {
         return pets.get(name);
     }
 
     public void feedAllPets() {
-        for (VirtualPet petToFeed : pets.values()){
-          petToFeed.feed();
+        for (VirtualPet petToFeed : pets.values()) {
+            if (petToFeed instanceof OrganicPet) {
+                ((OrganicPet) petToFeed).feed();
+            }
         }
     }
 
-    public void tickAllPets(){
-        for (VirtualPet petToTick : pets.values()){
+    public void tickAllPets() {
+        for (VirtualPet petToTick : pets.values()) {
             petToTick.tick();
         }
     }
 
     public void hydrateAllPets() {
-        for (VirtualPet petToHydrate : pets.values()){
-            petToHydrate.hydrate();
+        for (VirtualPet petToHydrate : pets.values()) {
+            if (petToHydrate instanceof OrganicPet) {
+                ((OrganicPet) petToHydrate).hydrate();
+            }
         }
     }
 
     public void playWithAllPets() {
-        for (VirtualPet petToPlayWith : pets.values()){
+        for (VirtualPet petToPlayWith : pets.values()) {
             petToPlayWith.play();
         }
     }
 
     public void getStatusOfAllPets() {
         System.out.println();
-        for (VirtualPet petToDisplay : this.retrievePets()){
+        for (VirtualPet petToDisplay : this.retrievePets()) {
             System.out.println(petToDisplay.toString());
         }
     }

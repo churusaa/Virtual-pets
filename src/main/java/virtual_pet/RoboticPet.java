@@ -1,8 +1,8 @@
 package virtual_pet;
 
 public class RoboticPet extends VirtualPet {
-    private int oilLevel;
-    private int maintenanceLevel;
+    protected int oilLevel;
+    protected int maintenanceLevel;
 
     public RoboticPet(String name) {
         super(name);

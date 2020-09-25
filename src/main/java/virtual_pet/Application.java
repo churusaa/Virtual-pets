@@ -11,17 +11,24 @@ public class Application {
         //TODO take user input
         System.out.print("Please enter a name for your new pet: ");
         String name = input.nextLine();
-        VirtualPet myVirtualPet = new VirtualPet(name);
+        VirtualPet myVirtualPet = new OrganicCat(name);
         VirtualPetShelter shelter = new VirtualPetShelter();
-        VirtualPet bobbo = new VirtualPet("Bobbo");
-        VirtualPet mambo = new VirtualPet("Mambo");
+        VirtualPet bobbo = new OrganicPet("Bobbo");
+        VirtualPet mambo = new OrganicPet("Mambo");
         shelter.addToShelter(bobbo);
         shelter.addToShelter(mambo);
         shelter.addToShelter(myVirtualPet);
 
+//TODO Place into Organic specific if statement
+
+//        if(myVirtualPet instanceof OrganicPet){
+//            ((OrganicPet) myVirtualPet).getThirst();
+//        }
+
+
         System.out.println("PET NAME IS " + myVirtualPet.getName() +
-                "\nStats: " + myVirtualPet.getBoredom() + ", " + myVirtualPet.getEnergy() + ", " + myVirtualPet.getHunger() + ", " +
-                myVirtualPet.getPlayfulness() + ", " + myVirtualPet.getThirst() + ".");
+                "\nStats: " + myVirtualPet.getBoredom() + ", " + myVirtualPet.getEnergy() + ", " + ((OrganicPet) myVirtualPet).getThirst() + ", " +
+                myVirtualPet.getPlayfulness() + ", " + ((OrganicPet) myVirtualPet).getThirst() + ".");
 //        for (VirtualPet petToDisplay : shelter.retrievePets()){
 //            System.out.println(petToDisplay.toString());
 //        }
@@ -40,16 +47,16 @@ public class Application {
                             "\nType 1 to play, 2 to feed, 3 to water, 4 to return to the main menu.");
                     decisionInputOption = input.nextInt();
                     input.nextLine();
-
+                    //TODO Place into Organic specific if statement
                     switch (decisionInputOption) {
                         case 1:
                             shelter.retrievePet(petToPlayWith).play();
                             break;
                         case 2:
-                            shelter.retrievePet(petToPlayWith).feed();
+                            ((OrganicPet)shelter.retrievePet(petToPlayWith)).feed();
                             break;
                         case 3:
-                            shelter.retrievePet(petToPlayWith).hydrate();
+                            ((OrganicPet)shelter.retrievePet(petToPlayWith)).hydrate();
                             break;
                         case 4:
                             System.out.println(petToPlayWith + " waves goodbye. Goodbye sweet little " + petToPlayWith + "!");

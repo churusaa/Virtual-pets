@@ -10,5 +10,10 @@ public class OrganicDog extends OrganicPet implements Dog {
         ticksUntilSoiled = 10;
     }
 
+    @Override
+    public void bark() {
+        System.out.println(name+" Barks!");
+    }
+
 
 }
