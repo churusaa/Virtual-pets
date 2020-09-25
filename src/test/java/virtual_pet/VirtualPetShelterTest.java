@@ -37,45 +37,45 @@ public class VirtualPetShelterTest {
                 .isEmpty();
     }
 
-//    @Test
-//    public void shouldBeAbleToFeedAllPets() {
-//        //Create Shelter
-//        VirtualPetShelter underTest = new VirtualPetShelter();
-//        //Create Pets
-//        VirtualPet petA = new OrganicDog("A");
-//        VirtualPet petB = new OrganicDog("B");
-//        //Add pets to shelter
-//        underTest.addToShelter(petA);
-//        underTest.addToShelter(petB);
-//        //Check their hunger before feeding
-////        int hungerBeforeFeedA = petA.getHunger();
-////        int hungerBeforeFeedB = petB.getHunger();
-//        //Feed all pets
-//        underTest.feedAllPets();
-//        //Make sure pets return a lower hunger value after feeding
-////        assertThat(petA.getHunger()).isLessThan(hungerBeforeFeedA);
-////        assertThat(petB.getHunger()).isLessThan(hungerBeforeFeedB);
-//    }
+    @Test
+    public void shouldBeAbleToFeedAllOrganicPets() {
+        //Create Shelter
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        //Create Pets
+        OrganicPet petA = new OrganicCat("A");
+        RoboticPet petB = new RoboticDog("B");
+        //Add pets to shelter
+        underTest.addToShelter(petA);
+        underTest.addToShelter(petB);
+        //Check their hunger before feeding
+        int hungerBeforeFeedA = petA.getHunger();
+//        int hungerBeforeFeedB = petB.getHunger();
+        //Feed all pets
+        underTest.feedAllOrganicPets();
+        //Make sure pets return a lower hunger value after feeding
+        assertThat(petA.getHunger()).isLessThan(hungerBeforeFeedA);
+//        assertThat(petB.getHunger()).isLessThan(hungerBeforeFeedB);
+    }
 
-//    @Test
-//    public void shouldBeAbleToHydrateAllPets() {
-//        //Create Shelter
-//        VirtualPetShelter underTest = new VirtualPetShelter();
-//        //Create Pets
-//        VirtualPet petA = new OrganicDog("A");
-//        VirtualPet petB = new OrganicDog("B");
-//        //Add pets to shelter
-//        underTest.addToShelter(petA);
-//        underTest.addToShelter(petB);
-//        //Check their thirst before Hydrating
-//        int thirstBeforeHydrateA = petA.getThirst();
-//        int thirstBeforeHydrateB = petB.getThirst();
-//        //Hydrate all pets
-//        underTest.hydrateAllPets();
-//        //Make sure pets return a lower thirst value after Hydrating
-//        assertThat(petA.getThirst()).isLessThan(thirstBeforeHydrateA);
-//        assertThat(petB.getThirst()).isLessThan(thirstBeforeHydrateB);
-//    }
+    @Test
+    public void shouldBeAbleToHydrateAllOrganicPets() {
+        //Create Shelter
+        VirtualPetShelter underTest = new VirtualPetShelter();
+        //Create Pets
+        OrganicPet petA = new OrganicDog("A");
+        OrganicPet petB = new OrganicDog("B");
+        //Add pets to shelter
+        underTest.addToShelter(petA);
+        underTest.addToShelter(petB);
+        //Check their thirst before Hydrating
+        int thirstBeforeHydrateA = petA.getThirst();
+        int thirstBeforeHydrateB = petB.getThirst();
+        //Hydrate all pets
+        underTest.hydrateAllOrganicPets();
+        //Make sure pets return a lower thirst value after Hydrating
+        assertThat(petA.getThirst()).isLessThan(thirstBeforeHydrateA);
+        assertThat(petB.getThirst()).isLessThan(thirstBeforeHydrateB);
+    }
 
     @Test
     public void shouldBeAbleToTickAllPets() {
@@ -83,7 +83,7 @@ public class VirtualPetShelterTest {
         VirtualPetShelter underTest = new VirtualPetShelter();
         //Create Pets
         VirtualPet petA = new OrganicDog("A");
-        VirtualPet petB = new OrganicDog("B");
+        VirtualPet petB = new RoboticDog("B");
         //Add pets to shelter
         underTest.addToShelter(petA);
         underTest.addToShelter(petB);
@@ -103,7 +103,7 @@ public class VirtualPetShelterTest {
         VirtualPetShelter underTest = new VirtualPetShelter();
         //Create Pets
         VirtualPet petA = new OrganicDog("A");
-        VirtualPet petB = new OrganicDog("B");
+        VirtualPet petB = new RoboticDog("B");
         //Add pets to shelter
         underTest.addToShelter(petA);
         underTest.addToShelter(petB);

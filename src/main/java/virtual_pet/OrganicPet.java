@@ -66,7 +66,7 @@ public class OrganicPet extends VirtualPet {
     public void play() {
         hunger += 15;
         thirst += 15;
-        boredom -= 10;
+        boredom -= 100;
         playfulness -= 40;
         energy -= 30;
         if (energy < 0) {
@@ -83,7 +83,11 @@ public class OrganicPet extends VirtualPet {
     @Override
     //nice up the output by calling our homebrew class .toString()
     public String toString() {
-        return name + ":\nHunger: " + hunger + " | Thirst: " + thirst + " | Energy: " + energy + " | Playfulness: " + playfulness + " | Boredom: " + boredom;
+        String cageStatus = "Clean";
+        if (isCageSoiled == true){
+            cageStatus = "Dirty";
+        }
+        return name + ":\nHunger: " + hunger + " | Thirst: " + thirst + " | Energy: " + energy + " | Playfulness: " + playfulness + " | Boredom: " + boredom + " | Cage: " + cageStatus;
     }
 
 }

@@ -36,7 +36,6 @@ public class RoboticPet extends VirtualPet {
         energy -= 10;
         maintenanceLevel += 1;
         oilLevel -= 1;
-
         if (energy < 0) {
             energy = 0;
         }
@@ -46,8 +45,6 @@ public class RoboticPet extends VirtualPet {
         if (maintenanceLevel > 100) {
             maintenanceLevel = 100;
         }
-        //TODO implement increase need for oil and maintenance after walk
-
     }
 
     @Override
@@ -74,5 +71,12 @@ public class RoboticPet extends VirtualPet {
             maintenanceLevel = 100;
         }
     }
+
+    @Override
+    //nice up the output by calling our homebrew class .toString()
+    public String toString() {
+        return name + ":\nMaintenance: " + maintenanceLevel + " | Oil: " + oilLevel + " | Energy: " + energy + " | Playfulness: " + playfulness + " | Boredom: " + boredom;
+    }
+
 }
 
